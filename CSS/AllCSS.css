@@ -803,7 +803,7 @@ a img {
     margin: 0;
     padding: 5px;
     width: 890px;
-    background: url(/images/cssspecific/rbx2/containerBkg_01.png);
+    background: url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/containerBkg_01.png);
     _overflow: hidden;
 }
 .favorited,
@@ -8760,7 +8760,7 @@ div.rbx2only {
     border: 1px solid #aaa;
 }
 a.rss_icon {
-    background: url(/images/cssspecific/rbx2/topNav_rss.png) no-repeat;
+    background: url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/topNav_rss.png) no-repeat;
 }
 .Column1d .StandardTabWhite,
 .Column2d .StandardTabWhite {
