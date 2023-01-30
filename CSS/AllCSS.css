@@ -690,7 +690,7 @@ a.BannerText:hover {
 .facepile {
     min-height: 0;
 }
-body {
+oldbody {
     margin: 0;
     padding: 0;
     background: url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/bkg.jpg) top center repeat-x #000444;
