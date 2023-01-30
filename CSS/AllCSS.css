@@ -519,7 +519,7 @@ a.BannerText:hover {
     color: White;
 }
 .Exclamation {
-    background: url(../../../images/Icons/exclamation.png) no-repeat;
+    background: url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/exclamation.png) no-repeat;
     height: 16px;
     width: 16px;
     float: left;
@@ -2406,7 +2406,7 @@ div#statusbar {
 }
 .tab_white19h,
 .tab_white19hselected {
-    background: transparent url('/images/friendsbar/tab_white19h_l2.gif') no-repeat left top;
+    background: transparent url('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/tab_white19h_l2.gif') no-repeat left top;
     color: #444;
     display: block;
     float: left;
@@ -2419,7 +2419,7 @@ div#statusbar {
 }
 .tab_white19h span,
 .tab_white19hselected span {
-    background: transparent url('/images/friendsbar/tab_white19h_r2.gif') no-repeat right top;
+    background: transparent url('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/tab_white19h_r2.gif') no-repeat right top;
     display: block;
     height: 15px;
     padding: 2px 15px 2px 7px;
@@ -2460,7 +2460,7 @@ div#statusbar {
     text-align: center;
 }
 .InGamePopup {
-    background: url(/images/cssspecific/rbx2/containerBkg_01.png);
+    background: url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/containerBkg_01.png);
     _overflow: hidden;
 }
 .voteYes {
