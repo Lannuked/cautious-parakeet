@@ -693,7 +693,7 @@ a.BannerText:hover {
 body {
     margin: 0;
     padding: 0;
-    background: url(/images/cssspecific/rbx2/bkg.jpg) top center repeat-x #000444;
+    background: url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/bkg.jpg) top center repeat-x #000444;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: 12px;
