@@ -5,6 +5,11 @@ oldbody {
     text-decoration: none;
     background: #F8FCFF url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/bg_gradient.jpg) repeat-x;
 }
+
+html {
+	
+    background: url(https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/images/bkg.jpg) top center repeat-x #000444;
+}
 a {
     text-decoration: none;
 }
