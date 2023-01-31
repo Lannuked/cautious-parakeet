@@ -50,41 +50,29 @@ function embedHTML(OpenURL, parent, prefixTag = "", postfixTag = ""){
     client.send();
 }
 
-document.getElementsByTagName("html")[0].style.visibility = "hidden";
-document.getElementsByTagName("html")[0].style.background = "#000444";
-document.getElementsByTagName("title")[0].remove()
-
 function unhideBody() {
     document.getElementsByTagName("body")[0].style.display = "none";
     document.getElementsByTagName("html")[0].style.visibility = "";
 }
 
-function loadPage()
-var href = document.location.href;
-var url = href.split('://')[1];
-if (!url.startsWith("www.roblox.com/discover")) {
-    console.log(document.location.href);
-    console.log("Not a supported page! Aborting...");
-    document.getElementsByTagName("html")[0].style.visibility = "";
-    document.getElementsByTagName("html")[0].style.background = "";
-    throw new Error();
+function loadPage() {
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
+		unhideBody();
+	});
+
+	var body2 = document.createElement("oldbody");
+	var head2 = document.createElement("oldhead");
+
+	body2.style.display = "none"
+	document.getElementsByTagName("html")[0].appendChild(body2);
+	document.getElementsByTagName("html")[0].appendChild(head2);
+
+	var ready = false;
+
+	embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/CSS/AllCSS.css', head2, "<style>", "</style>");
+	embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/Games.html', body2);
+
+	document.getElementsByTagName("html")[0].style.background = "";
 }
-
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
-    unhideBody();
-});
-
-var body2 = document.createElement("oldbody");
-var head2 = document.createElement("oldhead");
-
-body2.style.display = "none"
-document.getElementsByTagName("html")[0].appendChild(body2);
-document.getElementsByTagName("html")[0].appendChild(head2);
-
-var ready = false;
-
-embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/CSS/AllCSS.css', head2, "<style>", "</style>");
-embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/Games.html', body2);
-
-document.getElementsByTagName("html")[0].style.background = "";
