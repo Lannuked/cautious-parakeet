@@ -1,4 +1,7 @@
-var OldFooter = `<div class="FooterNav">
+async function RetOldFooter() {
+var OldFooter = `
+
+               <div id="Footer"><div class="FooterNav">
    <a id="ctl00_ctl00_rbxFooter_PrivacyHyperLink" href="/info/Privacy.aspx"><b>Privacy Policy</b></a>
    &nbsp;|&nbsp; 
    <a id="ctl00_ctl00_rbxFooter_AdvertiseHyperLink" href="http://sales.roblox.com">Advertise with Us</a>
@@ -20,4 +23,7 @@ var OldFooter = `<div class="FooterNav">
    ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex,<br /> and no resemblance to the products of these companies is intended.<br />Use of this site signifies your acceptance of the <a id="ctl00_ctl00_rbxFooter_hlTermsOfService" href="/info/TermsOfService.aspx">Terms and Conditions</a>.
    <br />
 </p>
-<done id="donefooter">`;
+</div>
+`;
+return OldFooter;
+}

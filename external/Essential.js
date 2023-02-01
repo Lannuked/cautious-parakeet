@@ -35,10 +35,12 @@ function waitForElm(selector) {
         });
     });
 }
+
 async function GetCount(countURL) {
     const response = await fetch(countURL, { credentials: 'include' });
     return response.json();
 }
+
 function embedHTML(OpenURL, parent, prefixTag = "", postfixTag = ""){
     var client = new XMLHttpRequest();
     client.open('GET', OpenURL);
@@ -55,13 +57,7 @@ function unhideBody() {
     document.getElementsByTagName("html")[0].style.visibility = "";
 }
 
-function loadPage() {
-
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
-		unhideBody();
-	});
-
+function loadPage(body2Content) {
 	var body2 = document.createElement("oldbody");
 	var head2 = document.createElement("oldhead");
 
@@ -72,7 +68,9 @@ function loadPage() {
 	var ready = false;
 
 	embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/CSS/AllCSS.css', head2, "<style>", "</style>");
-	embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/Games.html', body2);
+    body2.innerHTML = body2Content;
 
-	document.getElementsByTagName("html")[0].style.background = "";
+    document.getElementsByTagName("html")[0].style.background = "";
+
+	body2.style.display = ""
 }
