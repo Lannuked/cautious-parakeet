@@ -7,13 +7,10 @@
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Base64.js
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/CSS.js
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Essential.js
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Footer.js
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Header.js
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Games.js
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Alert.js
 // @grant        unsafeWindow
 // @run-at 	     document-start
 // @grant        GM_xmlhttpRequest
+// @resource     OldHeader http://githuburltorawhtmldatagoeshere
 // ==/UserScript==
 
 (async function() {
@@ -37,16 +34,7 @@
 		document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
 		unhideBody();
 	});
-	var OldCSS = await RetCSS();
-    var OldHeader = await RetOldHeader();
-    var OldAlert = await RetOldAlert();
-    var OldBody = await RetOldGamesBody();
-    var OldFooter = await RetOldFooter();
-    console.log(OldHeader);
-    console.log(OldAlert);
-    console.log(OldBody);
-    console.log(OldFooter);
-    loadPage(OldCSS + OldHeader + OldAlert + OldBody + OldFooter);
+    loadPage(htmlFile);
 
     document.getElementsByTagName("body")[0].style.display = "none";
 })();
