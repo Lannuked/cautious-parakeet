@@ -4,6 +4,8 @@
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *www.roblox.com/*
+// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Base64.js
+// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/CSS.js
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Essential.js
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Footer.js
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Header.js
