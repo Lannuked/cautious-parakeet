@@ -37,7 +37,7 @@
 		document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
 		unhideBody();
 	});
-	var OldCSS = await RetCSS()
+	var OldCSS = await RetCSS();
     var OldHeader = await RetOldHeader();
     var OldAlert = await RetOldAlert();
     var OldBody = await RetOldGamesBody();
