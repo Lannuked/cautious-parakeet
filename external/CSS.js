@@ -1,16 +1,16 @@
 async function RetCSS() {
-var AllCSS = ```<style>
+var AllCSS = `<style>
 oldbody {
     font: normal 8pt/normal Verdana, sans-serif;
     margin: 0;
     text-transform: none;
     text-decoration: none;
-    background: #F8FCFF url(``` + bg_gradient + ```) repeat-x;
+    background: #F8FCFF url(` + bg_gradient + `) repeat-x;
 }
 
 html {
 	
-    background: url(``` + bkg + ```) top center repeat-x #000444;
+    background: url(` + bkg + `) top center repeat-x #000444;
 }
 a {
     text-decoration: none;
@@ -526,7 +526,7 @@ a.BannerText:hover {
     color: White;
 }
 .Exclamation {
-    background: url(``` + exclamation + ```) no-repeat;
+    background: url(` + exclamation + `) no-repeat;
     height: 16px;
     width: 16px;
     float: left;
@@ -700,7 +700,7 @@ a.BannerText:hover {
 oldbody {
     margin: 0;
     padding: 0;
-    background: url(``` + bkg + ```) top center repeat-x #000444;
+    background: url(` + bkg + `) top center repeat-x #000444;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: 12px;
@@ -738,7 +738,7 @@ a img {
     padding: 0;
     width: 900px;
     height: 225px;
-    background: url(``` + head_03 + ```) repeat scroll 0 0 transparent;
+    background: url(` + head_03 + `) repeat scroll 0 0 transparent;
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 6;
@@ -810,7 +810,7 @@ a img {
     margin: 0;
     padding: 5px;
     width: 890px;
-    background: url(``` + containerBkg_01 + ```);
+    background: url(` + containerBkg_01 + `);
     _overflow: hidden;
 }
 .favorited,
@@ -2413,7 +2413,7 @@ div#statusbar {
 }
 .tab_white19h,
 .tab_white19hselected {
-    background: transparent url(``` + tab_white19h_l2 + ```) no-repeat left top;
+    background: transparent url(` + tab_white19h_l2 + `) no-repeat left top;
     color: #444;
     display: block;
     float: left;
@@ -2426,7 +2426,7 @@ div#statusbar {
 }
 .tab_white19h span,
 .tab_white19hselected span {
-    background: transparent url(``` + tab_white19h_r2 + ```) no-repeat right top;
+    background: transparent url(` + tab_white19h_r2 + `) no-repeat right top;
     display: block;
     height: 15px;
     padding: 2px 15px 2px 7px;
@@ -2467,7 +2467,7 @@ div#statusbar {
     text-align: center;
 }
 .InGamePopup {
-    background: url(``` + containerBkg_01 + ```);
+    background: url(` + containerBkg_01 + `);
     _overflow: hidden;
 }
 .voteYes {
@@ -8767,7 +8767,7 @@ div.rbx2only {
     border: 1px solid #aaa;
 }
 a.rss_icon {
-    background: url(``` + topNav_rss + ```) no-repeat;
+    background: url(` + topNav_rss + `) no-repeat;
 }
 .Column1d .StandardTabWhite,
 .Column2d .StandardTabWhite {
@@ -8785,6 +8785,6 @@ ul.AspNet-Menu li {
 ul.AspNet-Menu li a,
 ul.AspNet-Menu li span {
     height: 1%!important;
-</style>```;
+</style>`;
 	return AllCSS;
 }
