@@ -1,4 +1,5 @@
-```<style>
+async function RetCSS() {
+var AllCSS = ```<style>
 oldbody {
     font: normal 8pt/normal Verdana, sans-serif;
     margin: 0;
@@ -8784,4 +8785,6 @@ ul.AspNet-Menu li {
 ul.AspNet-Menu li a,
 ul.AspNet-Menu li span {
     height: 1%!important;
-</style>```
+</style>```;
+	return AllCSS;
+}

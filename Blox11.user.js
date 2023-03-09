@@ -37,7 +37,7 @@
 		document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
 		unhideBody();
 	});
-
+	var OldCSS = await RetCSS()
     var OldHeader = await RetOldHeader();
     var OldAlert = await RetOldAlert();
     var OldBody = await RetOldGamesBody();
@@ -46,7 +46,7 @@
     console.log(OldAlert);
     console.log(OldBody);
     console.log(OldFooter);
-    loadPage(OldHeader + OldAlert + OldBody + OldFooter);
+    loadPage(OldCSS + OldHeader + OldAlert + OldBody + OldFooter);
 
     document.getElementsByTagName("body")[0].style.display = "none";
 })();
