@@ -10,7 +10,8 @@
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Games.js
 // @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Alert.js
 // @grant        unsafeWindow
-// @run-at document-start
+// @run-at 	     document-start
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 (async function() {
