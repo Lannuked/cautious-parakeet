@@ -1,16 +1,3 @@
-function prepareLoading() {
-	var body2 = document.createElement("oldbody");
-	var head2 = document.createElement("oldhead");
-
-	body2.style.display = "none"
-	document.getElementsByTagName("html")[0].appendChild(body2);
-	document.getElementsByTagName("html")[0].appendChild(head2);
-
-	var ready = false;
-
-    return body2;
-}
-
 function doneLoading(body2) {
     document.getElementsByTagName("html")[0].style.background = "";
     body2.style.display = "";
@@ -35,7 +22,7 @@ function setInnerHTML(elm, html) {
   doneLoading(elm);
 }
 
-function waitForElm(selector) {
+function waitForElm(selector, parent) {
     return new Promise(resolve => {
         if (document.querySelector(selector)) {
             return resolve(document.querySelector(selector));
@@ -48,11 +35,12 @@ function waitForElm(selector) {
             }
         });
 
-        observer.observe(body2, {
+        observer.observe(parent, {
             childList: true,
             subtree: true
         });
     });
+    return selector;
 }
 
 function embedHTML(OpenURL, parent, prefixTag = "", postfixTag = ""){

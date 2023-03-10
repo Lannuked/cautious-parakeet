@@ -11,6 +11,10 @@
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getResourceText
 // @resource     OldHeader https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/HTML/Header.html
+// @resource     OldAlert https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/HTML/Alert.html
+// @resource     OldGames https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/HTML/Games.html
+// @resource     OldFooter https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/HTML/Footer.html
+// @resource     OldCSS https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/CSS/AllCSS.css
 // ==/UserScript==
 
 (async function() {
@@ -36,8 +40,16 @@
 		unhideBody();
 	});
 
-    var body2 = prepareLoading();
-    setInnerHTML(body2, GM_getResourceText("OldHeader"));
+	var body2 = document.createElement("oldbody");
+	var head2 = document.createElement("oldhead");
+
+	body2.style.display = "none"
+	document.getElementsByTagName("html")[0].appendChild(body2);
+	document.getElementsByTagName("html")[0].appendChild(head2);
+
+    embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/CSS/AllCSS.css', head2, "<style>", "</style>");
+    var currentBody = GM_getResourceText("OldHeader") + GM_getResourceText("OldAlert") + GM_getResourceText("OldGames") + GM_getResourceText("OldFooter");
+    body2.innerHTML = currentBody;
     doneLoading(body2)
 
     document.getElementsByTagName("body")[0].style.display = "none";
