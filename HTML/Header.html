@@ -457,6 +457,11 @@
 </div>
 
 <script>
+    async function GetCount(countURL) {
+    const response = await fetch(countURL, { credentials: 'include' });
+    return response.json();
+    }
+    
 	var FriendCount = await GetCount("https://friends.roblox.com/v1/user/friend-requests/count");
 	var MessagesCount = await GetCount("https://privatemessages.roblox.com/v1/messages/unread/count");
 	var UserInfo = await GetCount("https://users.roblox.com/v1/users/authenticated");

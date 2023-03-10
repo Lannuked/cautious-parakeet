@@ -1,19 +1,38 @@
+function prepareLoading() {
+	var body2 = document.createElement("oldbody");
+	var head2 = document.createElement("oldhead");
+
+	body2.style.display = "none"
+	document.getElementsByTagName("html")[0].appendChild(body2);
+	document.getElementsByTagName("html")[0].appendChild(head2);
+
+	var ready = false;
+
+    return body2;
+}
+
+function doneLoading(body2) {
+    document.getElementsByTagName("html")[0].style.background = "";
+    body2.style.display = "";
+}
+
 function setInnerHTML(elm, html) {
   elm.innerHTML = html;
-  
+
   Array.from(elm.querySelectorAll("script"))
     .forEach( oldScriptEl => {
       const newScriptEl = document.createElement("script");
-      
+
       Array.from(oldScriptEl.attributes).forEach( attr => {
-        newScriptEl.setAttribute(attr.name, attr.value) 
+        newScriptEl.setAttribute(attr.name, attr.value)
       });
-      
+
       const scriptText = document.createTextNode(oldScriptEl.innerHTML);
       newScriptEl.appendChild(scriptText);
-      
+
       oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
   });
+  doneLoading(elm);
 }
 
 function waitForElm(selector) {
@@ -36,11 +55,6 @@ function waitForElm(selector) {
     });
 }
 
-async function GetCount(countURL) {
-    const response = await fetch(countURL, { credentials: 'include' });
-    return response.json();
-}
-
 function embedHTML(OpenURL, parent, prefixTag = "", postfixTag = ""){
     var client = new XMLHttpRequest();
     client.open('GET', OpenURL);
@@ -58,19 +72,7 @@ function unhideBody() {
 }
 
 function loadPage(body2Content) {
-	var body2 = document.createElement("oldbody");
-	var head2 = document.createElement("oldhead");
-
-	body2.style.display = "none"
-	document.getElementsByTagName("html")[0].appendChild(body2);
-	document.getElementsByTagName("html")[0].appendChild(head2);
-
-	var ready = false;
-
-	embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/CSS/AllCSS.css', head2, "<style>", "</style>");
+    var body2 = prepareLoading();
     body2.innerHTML = body2Content;
-
-    document.getElementsByTagName("html")[0].style.background = "";
-
-	body2.style.display = ""
+    doneLoading(body2);
 }

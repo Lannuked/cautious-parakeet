@@ -4,20 +4,20 @@
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *www.roblox.com/*
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Base64.js
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/CSS.js
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/external/Essential.js
+// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/test/external/Prerun.js
+// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/test/external/Essential.js
 // @grant        unsafeWindow
 // @run-at 	     document-start
 // @grant        GM_xmlhttpRequest
-// @resource     OldHeader http://githuburltorawhtmldatagoeshere
+// @grant        GM_getResourceText
+// @resource     OldHeader https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/HTML/Header.html
 // ==/UserScript==
 
 (async function() {
     'use strict';
 
-    document.getElementsByTagName("title")[0].remove()
     document.getElementsByTagName("html")[0].style.visibility = "hidden";
+    document.getElementsByTagName("title")[0].remove()
     document.getElementsByTagName("html")[0].style.background = "#000444";
 
     var href = document.location.href;
@@ -34,7 +34,10 @@
 		document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
 		unhideBody();
 	});
-    loadPage(htmlFile);
+
+    var body2 = prepareLoading();
+    setInnerHTML(body2, GM_getResourceText("OldHeader"));
+    doneLoading(body2)
 
     document.getElementsByTagName("body")[0].style.display = "none";
 })();
