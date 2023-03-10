@@ -4,8 +4,8 @@
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *www.roblox.com/*
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/test/external/Prerun.js
-// @require      https://raw.githubusercontent.com/Lannuked/cautious-parakeet/test/external/Essential.js
+// @require      https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/external/Prerun.js
+// @require      https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/external/Essential.js
 // @grant        unsafeWindow
 // @run-at 	     document-start
 // @grant        GM_xmlhttpRequest
@@ -17,8 +17,9 @@
     'use strict';
 
     document.getElementsByTagName("html")[0].style.visibility = "hidden";
-    document.getElementsByTagName("title")[0].remove()
     document.getElementsByTagName("html")[0].style.background = "#000444";
+    waitForElm("title", document.head)
+    document.getElementsByTagName("title")[0].remove()
 
     var href = document.location.href;
     var url = href.split('://')[1];
