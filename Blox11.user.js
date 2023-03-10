@@ -47,7 +47,7 @@
 	document.getElementsByTagName("html")[0].appendChild(body2);
 	document.getElementsByTagName("html")[0].appendChild(head2);
 
-    embedHTML('https://raw.githubusercontent.com/Lannuked/cautious-parakeet/main/CSS/AllCSS.css', head2, "<style>", "</style>");
+    embedHTML('https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/CSS/AllCSS.css', head2, "<style>", "</style>");
     var currentBody = GM_getResourceText("OldHeader") + GM_getResourceText("OldAlert") + GM_getResourceText("OldGames") + GM_getResourceText("OldFooter");
     body2.innerHTML = currentBody;
     doneLoading(body2)
