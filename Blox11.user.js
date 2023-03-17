@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Roblox 2011
-// @version      0.1
+// @version      0.1.1
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *www.roblox.com/*
@@ -55,5 +55,6 @@ display: none;
 }
 `);
 GM_addStyle(TwentyElevenCSS);
+    history.pushState(null, null, "games.aspx");
     }
 })();
