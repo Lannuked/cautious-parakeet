@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Roblox 2011
-// @version      0.1.1
+// @version      0.1.2
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
-// @match        *www.roblox.com/*
+// @match        *://*www.roblox.com/*
 // @run-at 	     document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getResourceText
