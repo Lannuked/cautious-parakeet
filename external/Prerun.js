@@ -1,4 +1,6 @@
-const TwentyElevenCSS = GM_getResourceText("OldCSS");
+var href = document.location.href;
+    var url = href.split('://')[1];
+    if (url.startsWith("www.roblox.com/discover")) {
 GM_addStyle(`
 html {
 visibility: hidden;
@@ -9,3 +11,4 @@ body {
 display: none;
 }
 `);
+}

@@ -1,3 +1,5 @@
+const TwentyElevenCSS = GM_getResourceText("OldCSS");
+
 async function GetCount(countURL) {
 const response = await fetch(countURL, { credentials: 'include' });
 return response.json();
@@ -10,17 +12,6 @@ var UserID = UserInfo["id"];
 var Username = UserInfo["displayName"];
 var RobuxCount = await GetCount("https://economy.roblox.com/v1/users/" + UserID + "/currency");
 
-function setInitialStyle() {
-/*GM_addStyle ( `
-`html {
-visibility: "hidden";
-background: "#000444";
-};
-body {
-display: "none";
-};
-` );*/
-}
 function doneLoading(body2) {
     document.getElementsByTagName("html")[0].style.background = "";
     body2.style.display = "";
