@@ -1,2 +1,11 @@
-document.getElementsByTagName("html")[0].style.visibility = "hidden";
-document.getElementsByTagName("html")[0].style.background = "#000444";
+const TwentyElevenCSS = GM_getResourceText("OldCSS");
+GM_addStyle(`
+html {
+visibility: hidden;
+background: #000444;
+}
+
+body {
+display: none;
+}
+`);

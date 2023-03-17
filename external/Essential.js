@@ -1,6 +1,34 @@
+async function GetCount(countURL) {
+const response = await fetch(countURL, { credentials: 'include' });
+return response.json();
+}
+
+var FriendCount = await GetCount("https://friends.roblox.com/v1/user/friend-requests/count");
+var MessagesCount = await GetCount("https://privatemessages.roblox.com/v1/messages/unread/count");
+var UserInfo = await GetCount("https://users.roblox.com/v1/users/authenticated");
+var UserID = UserInfo["id"];
+var Username = UserInfo["displayName"];
+var RobuxCount = await GetCount("https://economy.roblox.com/v1/users/" + UserID + "/currency");
+
+function setInitialStyle() {
+/*GM_addStyle ( `
+`html {
+visibility: "hidden";
+background: "#000444";
+};
+body {
+display: "none";
+};
+` );*/
+}
 function doneLoading(body2) {
     document.getElementsByTagName("html")[0].style.background = "";
     body2.style.display = "";
+
+	document.getElementById("ctl00_BannerOptionsLoginView_BannerOptions_Authenticated_lnLoginName").append(Username)
+	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_MessageAlertCaptionHyperLink").append(MessagesCount["count"])
+	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_FriendsAlertCaptionHyperLink").append(FriendCount["count"])
+	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_RobuxAlertCaptionHyperLink").append(RobuxCount["robux"])
 }
 
 function setInnerHTML(elm, html) {
