@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Roblox 2011
-// @version      0.1.6
+// @version      0.1.7
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *://*www.roblox.com/*
@@ -8,6 +8,8 @@
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
+// @grant        GM_getValue
+// @grant        GM_setValue
 // @grant        unsafeWindow
 // @inject-into  auto
 // @resource     OldCSS https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/CSS/AllCSS.css
