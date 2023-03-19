@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Roblox 2011
-// @version      0.1.8
+// @version      0.1.10
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *://*www.roblox.com/*
@@ -48,19 +48,28 @@
         var currentBody = GM_getResourceText("OldHeader") + GM_getResourceText("OldAlert") + GM_getResourceText("OldGames") + GM_getResourceText("OldFooter");
         body2.innerHTML = currentBody;
         doneLoading(body2);
-        GM_addStyle(`
-            :root:not(oldbody, oldhead, html) {
-              all: unset;
+      GM_addStyle(`
+            :root {
+              display: none;
             }
             html {
-            background: #000444;
-            visibility: visible;
+              background: #000444;
+              visibility: visible;
+            }
+      `)
+		document.addEventListener("DOMContentLoaded", function(event) {
+			document.querySelectorAll('style:not([oldstylesheet]):not([html]),link[rel="stylesheet"]:not([html])').forEach(item => item.remove())
+        GM_addStyle(`
+            :root {
+              display: initial;
             }
             body {
             display: none;
             }
             `);
-        GM_addStyle(TwentyElevenCSS);
+		});
+		head2.innerHTML = "<style oldstylesheet>"+TwentyElevenCSS+"</style>";
+
         history.pushState(null, null, "games.aspx");
     }
 })();
