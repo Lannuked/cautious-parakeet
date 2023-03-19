@@ -7,10 +7,10 @@ return response.json();
 
 function setPlayerValues(Username, MessagesCount, FriendCount, RobuxCount) {
 
-	document.getElementById("ctl00_BannerOptionsLoginView_BannerOptions_Authenticated_lnLoginName").innerHTML(Username)
-	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_MessageAlertCaptionHyperLink").innerHTML(MessagesCount)
-	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_FriendsAlertCaptionHyperLink").innerHTML(FriendCount)
-	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_RobuxAlertCaptionHyperLink").innerHTML(RobuxCount)
+	document.getElementById("ctl00_BannerOptionsLoginView_BannerOptions_Authenticated_lnLoginName").innerHTML = Username
+	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_MessageAlertCaptionHyperLink").innerHTML = MessagesCount
+	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_FriendsAlertCaptionHyperLink").innerHTML = FriendCount
+	document.getElementById("ctl00_BannerAlertsLoginView_BannerAlerts_Authenticated_rbxBannerAlert_rbxAlerts_RobuxAlertCaptionHyperLink").innerHTML = RobuxCount
 }
 
 async function doneLoading(body2) {
