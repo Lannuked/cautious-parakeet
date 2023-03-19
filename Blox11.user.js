@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Roblox 2011
-// @version      0.1.10
+// @version      0.1.11
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *://*www.roblox.com/*

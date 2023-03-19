@@ -23,7 +23,7 @@ async function doneLoading(body2) {
 	var MessagesCount = await GetCount("https://privatemessages.roblox.com/v1/messages/unread/count");
 	var UserInfo = await GetCount("https://users.roblox.com/v1/users/authenticated");
 	var UserID = UserInfo["id"];
-	var Username = UserInfo["displayName"];
+	var Username = "Hi " + UserInfo["displayName"];
 	var RobuxCount = await GetCount("https://economy.roblox.com/v1/users/" + UserID + "/currency");
 	setPlayerValues(Username, MessagesCount["count"], FriendCount["count"], RobuxCount["robux"])
 	
