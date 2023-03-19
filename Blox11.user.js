@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Roblox 2011
-// @version      0.1.2
+// @version      0.1.6
 // @description  Reimplementation of the 2011 Roblox site!
 // @author       Lannuked
 // @match        *://*www.roblox.com/*
@@ -9,6 +9,7 @@
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // @grant        unsafeWindow
+// @inject-into  auto
 // @resource     OldCSS https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/CSS/AllCSS.css
 // @require      https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/external/Prerun.js
 // @require      https://raw.githubusercontent.com/Lannuked/rerisen-sunrise/test/external/Essential.js
@@ -25,36 +26,39 @@
     if (!url.startsWith("www.roblox.com/discover")) {
         console.log(document.location.href);
         console.log("Not a supported page! Aborting...");
+        /*kinda redundant now*/
         GM_addStyle(`
-html {
-visibility: visible;
-background: unset;
-}
-body {
-display: unset;
-}
-`);
+        html {
+            visibility: visible;
+            background: unset;
+            }
+            body {
+            display: unset;
+            }
+            `);
         throw new Error();
     } else {
-	var body2 = document.createElement("oldbody");
-	var head2 = document.createElement("oldhead");
-	document.getElementsByTagName("html")[0].appendChild(body2);
-	document.getElementsByTagName("html")[0].appendChild(head2);
+	      var body2 = document.createElement("oldbody");
+	      var head2 = document.createElement("oldhead");
+  	    document.getElementsByTagName("html")[0].appendChild(body2);
+   	    document.getElementsByTagName("html")[0].appendChild(head2);
 
-    var currentBody = GM_getResourceText("OldHeader") + GM_getResourceText("OldAlert") + GM_getResourceText("OldGames") + GM_getResourceText("OldFooter");
-    body2.innerHTML = currentBody;
-    doneLoading(body2);
-
-	document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove());
-    GM_addStyle(`
-html {
-background: #000444;
-}
-body {
-display: none;
-}
-`);
-GM_addStyle(TwentyElevenCSS);
-    history.pushState(null, null, "games.aspx");
+        var currentBody = GM_getResourceText("OldHeader") + GM_getResourceText("OldAlert") + GM_getResourceText("OldGames") + GM_getResourceText("OldFooter");
+        body2.innerHTML = currentBody;
+        doneLoading(body2);
+        GM_addStyle(`
+            :root:not(oldbody, oldhead, html) {
+              all: unset;
+            }
+            html {
+            background: #000444;
+            visibility: visible;
+            }
+            body {
+            display: none;
+            }
+            `);
+        GM_addStyle(TwentyElevenCSS);
+        history.pushState(null, null, "games.aspx");
     }
 })();
